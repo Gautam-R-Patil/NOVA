@@ -13,7 +13,7 @@ window.DocsModule = {
 
   async refreshDocs() {
     try {
-      const res = await fetch('/api/documents');
+      const res = await window.resilientFetch('/api/documents');
       const docs = await res.json();
       this.renderDocGrid(docs);
     } catch (err) {
@@ -49,7 +49,7 @@ window.DocsModule = {
 
   async openDocument(id, name) {
     try {
-      const res = await fetch(`/api/documents/${id}`);
+      const res = await window.resilientFetch(`/api/documents/${id}`);
       const doc = await res.json();
       
       this.viewerTitle.textContent = name;

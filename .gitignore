@@ -1,0 +1,10 @@
+node_modules/
+.env
+models.json
+models_list.txt
+error.txt
+out.txt
+test.js
+test2.js
+test3.js
+implementation_plannova

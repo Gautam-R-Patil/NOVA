@@ -22,7 +22,7 @@ window.ChatModule = {
       const typingId = 'typing-' + Date.now();
       this.renderMessage('assistant', '...', typingId);
 
-      const res = await fetch('/api/chat', {
+      const res = await window.resilientFetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: text })

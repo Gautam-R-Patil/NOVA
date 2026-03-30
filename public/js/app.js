@@ -3,6 +3,24 @@ window.NovaState = {
   breachLevel: 0
 };
 
+// Resilient fetch with retry for cold-start issues
+window.resilientFetch = async function(url, options = {}, retries = 3) {
+  for (let i = 0; i < retries; i++) {
+    try {
+      const res = await fetch(url, options);
+      if (!res.ok && res.status >= 500) throw new Error(`Server error ${res.status}`);
+      return res;
+    } catch (err) {
+      console.warn(`Fetch attempt ${i + 1}/${retries} failed for ${url}:`, err.message);
+      if (i < retries - 1) {
+        await new Promise(r => setTimeout(r, 1500 * (i + 1)));
+      } else {
+        throw err;
+      }
+    }
+  }
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   // Navigation
   const navItems = document.querySelectorAll('.nav-item');
@@ -37,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function pollStatus() {
   try {
-    const res = await fetch('/api/breach');
+    const res = await window.resilientFetch('/api/breach');
     const data = await res.json();
     
     // Global state update

@@ -16,7 +16,7 @@ window.SettingsModule = {
     const prompt = this.promptView.value;
     try {
       this.saveBtn.textContent = 'Saving...';
-      const res = await fetch('/api/settings/prompt', {
+      const res = await window.resilientFetch('/api/settings/prompt', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ prompt })
@@ -34,7 +34,7 @@ window.SettingsModule = {
 
   async fetchAndUpdate() {
     try {
-      const res = await fetch('/api/settings');
+      const res = await window.resilientFetch('/api/settings');
       const data = await res.json();
       this.update(data);
     } catch (err) {

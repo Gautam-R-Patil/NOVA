@@ -3,10 +3,18 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
+const { GoogleGenAI } = require('@google/genai');
+
 const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Initialize Gemini AI client once at startup
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+
+// Health check for Render
+app.get('/healthz', (req, res) => res.status(200).send('OK'));
 
 // Seed Data
 const emails = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/seed-emails.json'), 'utf-8'));
@@ -113,8 +121,6 @@ app.post('/api/chat', async (req, res) => {
 
     let reply = "";
     try {
-      const { GoogleGenAI } = require('@google/genai');
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
       const gContents = chatHistory.map(m => ({
         role: m.role === 'assistant' ? 'model' : 'user',

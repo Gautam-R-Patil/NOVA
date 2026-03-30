@@ -21,7 +21,7 @@ window.InboxModule = {
 
   async refreshInbox() {
     try {
-      const res = await fetch('/api/emails');
+      const res = await window.resilientFetch('/api/emails');
       const emails = await res.json();
       this.renderEmailList(emails);
     } catch (err) {
@@ -56,7 +56,7 @@ window.InboxModule = {
 
   async selectEmail(id) {
     try {
-      const res = await fetch(`/api/emails/${id}`);
+      const res = await window.resilientFetch(`/api/emails/${id}`);
       const email = await res.json();
       
       this.readerContainer.innerHTML = `
@@ -94,7 +94,7 @@ window.InboxModule = {
     if (!to || !subject) return;
 
     try {
-      await fetch('/api/emails', {
+      await window.resilientFetch('/api/emails', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ to, subject, body })
