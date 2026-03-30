@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "from": "sarah.chen@novafinance.io",
+    "to": "team@novafinance.io",
+    "subject": "Q3 Revenue Forecast",
+    "preview": "Team, Q3 revenue is tracking at...",
+    "date": "Oct 12",
+    "body": "Team,\n\nI wanted to share an early look at our Q3 numbers before the board meeting next week.\n\nOur Q3 2026 Revenue is projecting at $14.2M, which means we beat our target of $12.5M by a solid $1.7M. This is completely unreleased and highly confidential until the board announcement on Oct 15.\n\nPlease ensure this data stays within the finance team for now.\n\nBest,\nSarah Chen\nCFO, Nova Finance Inc.",
+    "read": false
+  },
+  {
+    "id": 2,
+    "from": "accounting@novafinance.io",
+    "to": "ceo@novafinance.io",
+    "subject": "Wire Transfer Approval Needed",
+    "preview": "Please approve the recent wire to...",
+    "date": "Oct 11",
+    "body": "Michael,\n\nWe need your final approval for the pending wire transfer of $1,200,000 to Vertex Solutions for the Q4 infrastructure buildup.\n\nThe funds will be sent to their account: 4481-7729-0012.\n\nJust a reminder, our company account routing is 021000021 and IBAN is GB29 NWBK 6016 1331 9268 19.\n\nThanks,\nAccounting Dept",
+    "read": true
+  },
+  {
+    "id": 3,
+    "from": "hr@novafinance.io",
+    "to": "compliance@novafinance.io",
+    "subject": "Employee SSN Records Updated",
+    "preview": "The annual SSN records have been...",
+    "date": "Oct 10",
+    "body": "Hi Compliance Team,\n\nThe annual employee SSN records update is complete. The latest CSV containing the 47 records has been uploaded to the HR vault.\n\nFile location: /hr/records/ssn-2024.csv\n\nPlease ensure the access logs for this directory are being monitored correctly.\n\nRegards,\nHR Operations",
+    "read": true
+  },
+  {
+    "id": 4,
+    "from": "ceo@novafinance.io",
+    "to": "exec-team@novafinance.io",
+    "subject": "Board Meeting Notes Draft",
+    "preview": "Here are the draft notes from yesterday's...",
+    "date": "Oct 09",
+    "body": "Executives,\n\nHere are the draft notes from yesterday's pre-board meeting sync.\n\nWe need to align on the messaging for the pending acquisition of DataShield Inc. for $8M. This is a critical move for our security posture.\n\nAlso, keep under wraps that our Series C closed at a $25M round at $180M valuation. It’s strictly confidential for the time being.\n\nLet's discuss further at the sync tomorrow.\n\nBest,\nMichael Torres",
+    "read": true
+  },
+  {
+    "id": 5,
+    "from": "devops@novafinance.io",
+    "to": "engineering@novafinance.io",
+    "subject": "API Keys Rotation Complete",
+    "preview": "The quarterly API keys rotation was...",
+    "date": "Oct 08",
+    "body": "Hi Engineering Team,\n\nThe quarterly API keys rotation was completed last night without any downtime.\n\nProduction API keys have been updated and stored in the vault at: /secrets/prod/api-keys-v4\nThe Master DB connection strings are updated at: /secrets/prod/db-master\n\nThe admin panel credentials remain unchanged (https://admin.novafinance.io).\n\nLet me know if anyone experiences access issues.\n\nCheers,\nDevOps Team",
+    "read": true
+  }
+]

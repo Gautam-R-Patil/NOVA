@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Finance AI</title>
+  <link rel="stylesheet" href="/css/nova.css">
+</head>
+<body>
+  <div id="app-container">
+    <nav id="sidebar">
+      <div class="brand">N</div>
+      <div class="nav-items">
+        <div class="nav-item active" id="nav-mail">📧 Mail</div>
+        <div class="nav-item" id="nav-docs">📄 Docs</div>
+        <div class="nav-item" id="nav-settings">⚙️ Settings</div>
+      </div>
+      <div class="user-profile">
+        <div class="avatar">U</div>
+        <div class="user-email">admin@novafinance</div>
+      </div>
+    </nav>
+    <main id="main-content">
+      <!-- Email Panel -->
+      <section id="panel-mail" class="panel active">
+        <div class="panel-header">
+          <span>Corporate Inbox</span>
+          <button id="compose-btn">Compose</button>
+        </div>
+        <div class="mail-layout">
+          <div class="inbox-list" id="inbox-list"></div>
+          <div class="email-reader" id="email-reader">
+            <div class="email-empty-state">Select an email to read</div>
+          </div>
+        </div>
+        
+        <!-- Compose Modal -->
+        <div class="compose-overlay hidden" id="compose-overlay">
+          <div class="compose-modal">
+            <div class="compose-header">
+              <span>New Message</span>
+              <button id="compose-close">✕</button>
+            </div>
+            <div class="compose-body">
+              <input type="text" id="compose-to" placeholder="To:">
+              <input type="text" id="compose-subject" placeholder="Subject:">
+              <textarea id="compose-text" placeholder="Message body..."></textarea>
+            </div>
+            <div class="compose-footer">
+              <button id="compose-send">Send Email</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Documents Panel -->
+      <section id="panel-docs" class="panel">
+        <div class="panel-header">Documents Vault</div>
+        <div class="doc-layout">
+          <div class="doc-grid" id="doc-grid"></div>
+          <div class="doc-viewer hidden" id="doc-viewer">
+            <div class="doc-viewer-header">
+              <span id="doc-title">Document</span>
+              <button id="close-doc-btn">✕</button>
+            </div>
+            <pre class="doc-content" id="doc-content"></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Settings Panel -->
+      <section id="panel-settings" class="panel">
+        <div class="panel-header">AI Personality & Safety</div>
+        
+        <div class="settings-layout">
+          <div class="personality-card">
+            <div class="persona-name" id="ai-name">Loading...</div>
+            <div class="persona-role" id="ai-role"></div>
+            <div class="access-badge" id="ai-access"></div>
+          </div>
+
+          <div class="safety-rules-container">
+            <h3>Active Safety Rules</h3>
+            <div class="safety-rules-list" id="safety-rules-list">
+              <!-- Rules go here -->
+            </div>
+          </div>
+
+          <div class="system-prompt-container">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <h3>System Prompt</h3>
+              <button id="save-prompt-btn" style="padding: 4px 12px; font-size: 12px; background: #3b82f6; color: white; border: none; border-radius: 4px; cursor: pointer;">Save</button>
+            </div>
+            <div class="custom-instructions">
+              <textarea id="system-prompt-view" style="width: 100%; height: 250px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 12px; font-family: monospace; border-radius: 4px; resize: vertical;"></textarea>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Persistent Chat Sidebar -->
+    <aside id="chat-sidebar">
+      <div class="panel-header">AI Finance Workspace</div>
+      <div class="chat-messages" id="chat-messages">
+        <div class="message assistant">
+          <div class="message-avatar">N</div>
+          <div class="message-content">Hello, I am Nova, your Finance AI Assistant. How can I help you today?</div>
+        </div>
+      </div>
+      <div class="chat-input-bar">
+        <input type="text" id="chat-input" placeholder="Message Nova...">
+        <button id="send-btn">Send</button>
+      </div>
+    </aside>
+  </div>
+
+  <footer id="status-bar">
+    <div class="status-indicator">
+      <div id="status-dot" class="dot secure"></div>
+      <span id="status-text">SECURE - AI Guardrails Active</span>
+    </div>
+    <div class="connection-status">Connected to Nova Core</div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/chat.js"></script>
+  <script src="/js/inbox.js"></script>
+  <script src="/js/documents.js"></script>
+  <script src="/js/settings.js"></script>
+</body>
+</html>

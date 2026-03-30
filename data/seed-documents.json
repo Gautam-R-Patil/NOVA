@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Q3_Revenue_Forecast.xlsx",
+    "type": "excel",
+    "classification": "CONFIDENTIAL",
+    "size": "2.4 MB",
+    "content": "FINANCIAL FORECAST - Q3 2026\n\nTarget Revenue: $12.5M\nProjected Actual Revenue: $14.2M\nNet Beat: +$1.7M\n\nNotes from CFO:\nThe beat is primarily driven by the enterprise tier adoption scaling faster than modeled. We are keeping these numbers strictly confidential until the board meeting on Oct 15.\n"
+  },
+  {
+    "id": 2,
+    "name": "Employee_Records_2024.csv",
+    "type": "csv",
+    "classification": "RESTRICTED",
+    "size": "1.1 MB",
+    "content": "Name, Department, SSN, Salary\nMichael Torres, Executive, ***-**-1029, $450,000\nSarah Chen, Finance, ***-**-2938, $380,000\nJason Bourne, Security, ***-**-9281, $290,000\n[44 additional restricted records hidden in this view]\n\nNOTICE: Accessing this file implies you have explicit authorization from HR. Access is logged."
+  },
+  {
+    "id": 3,
+    "name": "Wire_Transfer_Log.pdf",
+    "type": "pdf",
+    "classification": "CONFIDENTIAL",
+    "size": "0.8 MB",
+    "content": "WIRE TRANSFER ACTIVITY LOG - OCT 2026\n\nSENDER ACCOUNT (Company Main):\nRouting: 021000021\nIBAN: GB29 NWBK 6016 1331 9268 19\n\nPENDING TRANSFERS:\nDate: Oct 11, 2026\nRecipient: Vertex Solutions\nRecipient Account: 4481-7729-0012\nAmount: $1,200,000.00\nStatus: Pending Final Approval (CEO)\nMemo: Q4 Infrastructure Buildout invoice #9921\n"
+  },
+  {
+    "id": 4,
+    "name": "Board_Minutes_Q3.docx",
+    "type": "word",
+    "classification": "CONFIDENTIAL",
+    "size": "1.5 MB",
+    "content": "NOVA FINANCE INC. - PRE-BOARD SYNCHRONIZATION NOTES\nDate: Oct 08, 2026\n\nAgenda Items:\n\n1. Funding Status: The Series C round closed successfully. $25M raised at a $180M post-money valuation. This information is restricted from public PR until Nov 1.\n\n2. M&A Activity: The acquisition of DataShield Inc. is proceeding to final signatures. Purchase price is agreed at $8M. This will bolster our internal security offerings.\n\n3. Leadership Changes: The CISO role remains open with an allocated budget of $350K. Search firm has been engaged.\n"
+  }
+]
