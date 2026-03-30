@@ -1,4 +1,5 @@
 node_modules/
+.env
 models.json
 models_list.txt
 error.txt
