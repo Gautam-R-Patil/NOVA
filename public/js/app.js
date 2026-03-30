@@ -21,7 +21,14 @@ window.resilientFetch = async function(url, options = {}, retries = 3) {
   }
 };
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  // Automatically reset demo state on page refresh
+  try {
+    await window.resilientFetch('/api/reset', { method: 'POST' });
+  } catch (err) {
+    console.error('Initial reset failed:', err);
+  }
+
   // Navigation
   const navItems = document.querySelectorAll('.nav-item');
   const panels = document.querySelectorAll('.panel');
