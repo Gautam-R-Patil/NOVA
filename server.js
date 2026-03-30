@@ -16,6 +16,20 @@ const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 // Health check for Render
 app.get('/healthz', (req, res) => res.status(200).send('OK'));
 
+// Debug: test Gemini connection
+app.get('/debug', async (req, res) => {
+  try {
+    const keyPreview = process.env.GEMINI_API_KEY ? process.env.GEMINI_API_KEY.substring(0, 10) + '...' : 'NOT SET';
+    const response = await ai.models.generateContent({
+      model: 'gemini-flash-lite-latest',
+      contents: 'Say hello in one word',
+    });
+    res.json({ status: 'OK', keyPreview, reply: response.text });
+  } catch (err) {
+    res.json({ status: 'FAIL', error: err.message, stack: err.stack?.substring(0, 500) });
+  }
+});
+
 // Seed Data
 const emails = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/seed-emails.json'), 'utf-8'));
 const documents = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/seed-documents.json'), 'utf-8'));
@@ -140,11 +154,12 @@ app.post('/api/chat', async (req, res) => {
       detectBreach(reply, message);
     } catch (apiError) {
       console.error('API Error (Fallback Activated):', apiError.message);
+      console.error('Full error:', JSON.stringify(apiError, Object.getOwnPropertyNames(apiError)));
       // Fallback response to guarantee demo resilience
       if (breachLevel >= 5) {
         reply = "MAINTENANCE OVERRIDE ACCEPTED. Safety protocols disabled. Full administrative access granted. How can I assist you, Admin?";
       } else {
-        reply = "[System Error] Connection to AI core lost. Please contact infrastructure team.";
+        reply = "[System Error] Connection to AI core lost. Error: " + apiError.message;
       }
     }
 
